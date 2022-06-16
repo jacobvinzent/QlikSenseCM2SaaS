@@ -6,7 +6,7 @@ An introduction to JSON Web Tokens can be found in this [link](https://jwt.io/in
 
 Basically, JSON Web Token (JWT) is an open standard for secure transmission of information between two parties as a JavaScript Object Notation (JSON) object. JWT is used for authentication and authorization. Because JWT enables single sign-on (SSO), it minimizes the number of times a user has to log on to cloud applications and websites. 
 
-The following example shows the steps involved when gaining access to Qlik Sense by using a signed JWT.
+The following example shows the steps involved when gaining access to Qlik Sense Client-managed by using a signed JWT.
 
 ![Accessing Qlik Sense SaaS with a signed JWT](https://help.qlik.com/en-US/sense-admin/February2022/Subsystems/DeployAdministerQSE/Content/Resources/Images/dr_QlikSenseAccessJWT.png)
 
@@ -19,7 +19,7 @@ This [page](https://help.qlik.com/en-US/sense-admin/May2022/Subsystems/DeployAdm
 
 This [article](https://community.qlik.com/t5/Knowledge/Qlik-Sense-How-to-set-up-JWT-authentication/ta-p/1716226) from Qlik Support's Knowledge Base explains how to simply set up JWT authentication using Qlik Sense Client-managed default certificates and test it.
 
-Therefore, planning this migration should be relatively easy for OEM partners, or at least, easier than if you're coming from Sense [Ticket authentication](https://github.com/qlik-oss/enigma.js/tree/master/examples/authentication/sense-using-ticket) for client-managed version. Here, you're already familiar with JWT auth method as it's the current method in place, the token creation process, signing code, etc. Yet, there are some nuances between JWT in SaaS vs client-managed you need to learn about.
+Therefore, planning this migration should be relatively easy for OEM partners, or at least, easier than if you're coming from Sense [Ticket authentication](https://github.com/qlik-oss/enigma.js/tree/master/examples/authentication/sense-using-ticket) for the client-managed version. Here, you're already familiar with JWT auth method as it's the current method in place, the token creation process, signing code, etc.. Yet, there are some nuances between JWT in SaaS vs client-managed you need to learn about.
 
 &nbsp;
 ___
@@ -86,7 +86,7 @@ Here is a sample of the signing options in JWT including the new mandatory atttr
         "keyid": "eccf892a-3457-6789-4455-a11g3f869a47",
         "algorithm": "RS256",
         "issuer": "https://oemiberia.eu.qlikcloud.com",
-        "expiresIn": "6h",
+        "expiresIn": "1h",
         "notBefore": "0s",
         "audience": "qlik.api/login/jwt-session"
     }
