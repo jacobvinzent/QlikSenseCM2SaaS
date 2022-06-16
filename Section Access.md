@@ -1,7 +1,7 @@
 # From Client-Managed to SaaS: **Section Access**
 
 ## Introduction
-This user guide describes the outline for allowing OEM partners to successfully migrate to Qlik Sense SaaS (Qlik Cloud) a Section Access (SA) table that works in Qlik Sense Enterprise server (the version of the product you can install on Windows). When "SaaS" or "Qlik Cloud" is mentioned in this document, we are still referring to the cloud version of Qlik Sense hsoted in our own cloud infrastructure. When "Client-managed" or "Windows" is mentioned in this document, it means the server version of the Qlik Sense hosted by you in your own servers in either a private cloud, public cloud or on-premise.
+This user guide describes the outline for allowing OEM partners to successfully migrate to Qlik Sense SaaS (Qlik Cloud) a Section Access (SA) table that works in Qlik Sense Enterprise server (the version of the product you can install on Windows). When "SaaS" or "Qlik Cloud" is mentioned in this document, we are still referring to the cloud version of Qlik Sense hosted in our own cloud infrastructure. When "Client-managed" or "Windows" is mentioned in this document, it means the server version of the Qlik Sense hosted by you in your own servers in either a private cloud, public cloud or on-premise.
 
 SA mechanism is used in Qlik Sense (both Windows and SaaS) for dynamic data reduction by the Qlik Engine to provide a different view of the data within the same dashboard layout. In other words, this allows to control the security of an application at the row and column level. This mechanism is part of our **security model** in SaaS as depicted below:
 
@@ -14,7 +14,7 @@ In the OEM space, Section Access can be leveraged for the following reasons:
 1. __Segregate customers' data__ within one monolithic app that contains __all__ customer data.
 2. Add row-level security to define __who (users) gets to see what (content)__ when provisioning one app per customer.
 
-Next two sections in this document are meant to review how the SA mechanism works in both client-managed and SaaS before we dig deeper into the key differences and how to implement/migrate in SaaS when coming from a client-managed deployment.
+The next two sections in this document are meant to review how the SA mechanism works in both client-managed and SaaS before we dig deeper into the key differences and how to implement/migrate in SaaS when coming from a client-managed deployment.
 
 &nbsp;
 
@@ -135,7 +135,7 @@ The migration journey from client-managed to SaaS looks different depending on t
 
 ### **1. Same custom IdP in both client-managed and SaaS**
 
-This is the easiest implementation because the same SA table can be reused as is and ported directly to SaaS. This SA security table uses USER.ID system field to give access to data. Regardless of the mappings donde in your IdP i.e. internal Windows identity, email address, or any other custom values, this will seamlessly work in SaaS since the same IdP configured in client-managed will be used in SaaS. Just remember that your configured IdP in client-managed must be compatible with the OIDC protocol to work with SaaS.
+This is the easiest implementation because the same SA table can be reused as is and ported directly to SaaS. This SA security table uses USER.ID system field to give access to data. Regardless of the mappings done in your IdP i.e. internal Windows identity, email address, or any other custom values, this will seamlessly work in SaaS since the same IdP configured in client-managed will be used in SaaS. Just remember that your configured IdP in client-managed must be compatible with the OIDC protocol to work with SaaS.
 
 ![Example of same IdP in client-managed and SaaS deployment](https://user-images.githubusercontent.com/10588391/168803293-4b355da8-72bf-4041-8287-ed926d04b038.png)
 
