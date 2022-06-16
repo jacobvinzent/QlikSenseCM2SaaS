@@ -1,14 +1,14 @@
 # From Client-Managed to SaaS: **Web Ticketing to SaaS JWT**
 
 ## Introduction
-This user guide is designed to help OEM partners with a Qlik Sense Client-managed  deployment that are thinking or willing to move to SaaS.
+This user guide is designed to help OEM partners with a Qlik Sense Client-managed  deployment that are thinking of or willing to move to SaaS.
 
 Typically, authentication and authorization is the first integration point with your solution. When embedding analytics with Qlik Sense, OEM partners have a SSO integration in place and are reusing the existing authorization model in their solution. From a security integration standpoint authentication and authorization are associated but cover different aspects:
 
 Authentication – `Who is the user?​`  
 Authorization – `What can this user do or see in Qlik Sense?​`
 
-Take as an example a passanger at the airport going through security control and customs desk to confirm his personal identity. Depending on his air ticket this passenger will have the right to get on a plane based on the authorization given by his ticket.
+Take as an example a passenger at the airport going through security control and customs desk to confirm his personal identity. Depending on his air ticket this passenger will have the right to get on a plane based on the authorization given by his ticket.
 
 &nbsp;
 
@@ -125,7 +125,7 @@ Here is a sample of the signing options in JWT including the new mandatory atttr
         "keyid": "eccf892a-3457-6789-4455-a11g3f869a47",
         "algorithm": "RS256",
         "issuer": "https://oemiberia.eu.qlikcloud.com",
-        "expiresIn": "6h",
+        "expiresIn": "1h",
         "notBefore": "0s",
         "audience": "qlik.api/login/jwt-session"
     }
@@ -164,7 +164,7 @@ Example of JWT creation and signing code:
       keyid: 'my-custom-jwt',
       algorithm: 'RS256',
       issuer: 'https://oemiberia.eu.qlikcloud.com',
-      expiresIn: '6h',
+      expiresIn: '1h',
       notBefore: '0s',
       audience: 'qlik.api/login/jwt-session',
     };
